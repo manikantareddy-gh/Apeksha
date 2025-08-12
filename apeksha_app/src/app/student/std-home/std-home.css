@@ -1,0 +1,43 @@
+body {
+  padding-top: 56px; /* Adjust for fixed navbar height */
+}
+
+/* Make the offcanvas sidebar narrower */
+#sidebar {
+  --bs-offcanvas-width: 250px;
+}
+
+/* Marquee Section Styles */
+.marquee-container {
+  background: linear-gradient(90deg, #ffdd57, #ffc107);
+  color: #222;
+  font-weight: 600;
+  font-size: 0.95rem;
+  overflow: hidden;
+  position: relative;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 12s linear infinite;
+  padding-left: 100%;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Optional: Pause animation on hover */
+.marquee-container:hover .marquee-text {
+  animation-play-state: paused;
+}

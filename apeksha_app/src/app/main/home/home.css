@@ -1,0 +1,256 @@
+/* -----------------------------------
+  1. Base Reset & Global Styles
+----------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  overflow-x: hidden;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* -----------------------------------
+  2. Container & Layout Utilities
+----------------------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* -----------------------------------
+  3. Header
+----------------------------------- */
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+/* -----------------------------------
+  4. Button Styles
+----------------------------------- */
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+.btn-primary:hover::before {
+  left: 100%;
+}
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+.btn-outline {
+  background: none;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-outline:hover {
+  background: #2563eb;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+.btn-full {
+  width: 100%;
+}
+
+/* -----------------------------------
+  5. Hero Section
+----------------------------------- */
+.hero {
+  background: linear-gradient(135deg, #f0f9ff 0%, #fff 50%, #faf5ff 100%);
+  padding: 5rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 1s ease-out;
+}
+.hero-content {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  animation: slideInLeft 1s ease-out 0.2s both;
+}
+.hero-description {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  animation: slideInLeft 1s ease-out 0.4s both;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  animation: slideInLeft 1s ease-out 0.6s both;
+}
+
+/* -----------------------------------
+  6. Cards, Stats, Testimonials etc.
+----------------------------------- */
+/* Define and keep only styles relevant to visible components. You already have good animation and responsive grid setups — group and reuse them */
+
+/* -----------------------------------
+  7. Animations
+----------------------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(0);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+}
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
+}
+@keyframes magneticPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* -----------------------------------
+  8. Responsive Media Queries
+----------------------------------- */
+@media (min-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-image {
+    display: block;
+  }
+  .newsletter-form {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+}

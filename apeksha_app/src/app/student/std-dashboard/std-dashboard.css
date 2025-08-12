@@ -1,0 +1,97 @@
+/* Custom Properties for easy customization */
+:root {
+  --sidebar-width: 220px;
+  --sidebar-bg: #343a40;
+  --sidebar-link-hover-bg: #495057;
+  --text-light: #fff;
+}
+
+body {
+  overflow-x: hidden;
+  transition: margin-left 0.3s ease;
+}
+
+/* Hide the default checkbox */
+#sidebarToggle {
+  display: none;
+}
+
+/* Sidebar toggle button style */
+.toggle-label {
+  font-size: 1.5rem; /* Use rem for better scaling */
+  cursor: pointer;
+  padding: 0.625rem 1.25rem;
+  color: var(--text-light);
+  background-color: var(--sidebar-bg);
+  display: inline-block;
+  border-radius: 0 0.25rem 0.25rem 0;
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  z-index: 1030;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--sidebar-bg);
+  position: fixed;
+  top: 0;
+  left: calc(
+    -1 * var(--sidebar-width)
+  ); /* Use calc() for precision */
+  transition: left 0.3s ease;
+  z-index: 1030;
+  padding-top: 4rem; /* Adjust to accommodate toggle button */
+}
+
+/* Show sidebar when checkbox is checked */
+#sidebarToggle:checked ~ .sidebar {
+  left: 0;
+}
+
+/* Sidebar links */
+.sidebar a {
+  color: var(--text-light);
+  display: block;
+  padding: 0.625rem 1.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+  background-color: var(--sidebar-link-hover-bg);
+}
+
+/* Main content area */
+.content {
+  transition: margin-left 0.3s ease;
+  padding: 1.25rem;
+}
+
+/* Push content when sidebar is open */
+#sidebarToggle:checked ~ .content {
+  margin-left: var(--sidebar-width);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .toggle-label {
+    top: 0.5rem; /* Adjust position for mobile */
+  }
+
+  .sidebar {
+    left: -100%;
+    width: 100%;
+  }
+
+  #sidebarToggle:checked ~ .sidebar {
+    left: 0;
+  }
+
+  #sidebarToggle:checked ~ .content {
+    margin-left: 0;
+  }
+}

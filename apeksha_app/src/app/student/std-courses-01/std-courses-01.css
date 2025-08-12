@@ -1,0 +1,25 @@
+h3 {
+  font-weight: 600;
+}
+
+.list-group-item {
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.list-group-item h5 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.btn-sm {
+  padding: 6px 14px;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}

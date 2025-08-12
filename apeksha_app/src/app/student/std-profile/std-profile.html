@@ -1,0 +1,83 @@
+<!-- Font Awesome CDN for icons -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<app-std-home></app-std-home>
+
+<div class="container my-5">
+  <div class="card shadow-lg student-profile-card">
+    <div class="card-body">
+      <h3 class="card-title text-center mb-4">Student Profile</h3>
+
+      <div class="text-center mb-4">
+        <img
+          src="assets/default-profile.png"
+          alt="Profile Picture"
+          class="img-fluid rounded-circle profile-pic"
+        />
+      </div>
+
+      <div class="row g-2 mb-4">
+        <div class="col-12 col-md-6">
+          <p class="mb-0"><span class="fw-bold">Full Name:</span> John Doe</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p class="mb-0">
+            <span class="fw-bold">Email:</span> john.doe@example.com
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p class="mb-0"><span class="fw-bold">College:</span> KLU</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p class="mb-0"><span class="fw-bold">Batch:</span> Y22</p>
+        </div>
+      </div>
+
+      <div class="coding-profiles mb-4">
+        <h5 class="mb-3">Coding Profiles</h5>
+        <ul class="list-unstyled">
+          <li class="d-flex align-items-center mb-2">
+            <i class="fas fa-code me-2 text-primary"></i>
+            <span class="fw-bold">CodeChef:</span>
+            <a
+              href="https://www.codechef.com/users/johndoe"
+              target="_blank"
+              class="ms-2 text-decoration-none"
+              >johndoe</a
+            >
+          </li>
+          <li class="d-flex align-items-center mb-2">
+            <i class="fas fa-terminal me-2 text-success"></i>
+            <span class="fw-bold">LeetCode:</span>
+            <a
+              href="https://leetcode.com/johndoe"
+              target="_blank"
+              class="ms-2 text-decoration-none"
+              >johndoe</a
+            >
+          </li>
+          <li class="d-flex align-items-center mb-2">
+            <i class="fas fa-laptop-code me-2 text-info"></i>
+            <span class="fw-bold">Codeforces:</span>
+            <a
+              href="https://codeforces.com/profile/johndoe"
+              target="_blank"
+              class="ms-2 text-decoration-none"
+              >johndoe</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="d-grid mt-4">
+        <a href="/update-profile" class="btn btn-primary btn-lg"
+          >Update Profile</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
